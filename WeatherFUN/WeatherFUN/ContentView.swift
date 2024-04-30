@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  WeatherFUN
-//
-//  Created by 정종원 on 4/30/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {

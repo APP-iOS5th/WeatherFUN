@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063F68FA2BE0D05A00C8CB49 /* MainHorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F68F92BE0D05A00C8CB49 /* MainHorizontalScrollView.swift */; };
+		063F68FC2BE0D33600C8CB49 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F68FB2BE0D33600C8CB49 /* TestView.swift */; };
 		4A8D33DB2BE0C624007C5582 /* WeatherFUNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */; };
 		4A8D33DD2BE0C624007C5582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33DC2BE0C624007C5582 /* ContentView.swift */; };
 		4A8D33DF2BE0C628007C5582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D33DE2BE0C628007C5582 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063F68F92BE0D05A00C8CB49 /* MainHorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHorizontalScrollView.swift; sourceTree = "<group>"; };
+		063F68FB2BE0D33600C8CB49 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		4A8D33D72BE0C624007C5582 /* WeatherFUN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherFUN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFUNApp.swift; sourceTree = "<group>"; };
 		4A8D33DC2BE0C624007C5582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */,
 				4A8D33DC2BE0C624007C5582 /* ContentView.swift */,
+				063F68FB2BE0D33600C8CB49 /* TestView.swift */,
+				063F68F92BE0D05A00C8CB49 /* MainHorizontalScrollView.swift */,
 				4A8D33DE2BE0C628007C5582 /* Assets.xcassets */,
 				4A8D33E02BE0C628007C5582 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063F68FC2BE0D33600C8CB49 /* TestView.swift in Sources */,
 				4A8D33DD2BE0C624007C5582 /* ContentView.swift in Sources */,
+				063F68FA2BE0D05A00C8CB49 /* MainHorizontalScrollView.swift in Sources */,
 				4A8D33DB2BE0C624007C5582 /* WeatherFUNApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
