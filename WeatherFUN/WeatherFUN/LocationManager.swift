@@ -18,15 +18,23 @@ class LocationManager: NSObject, ObservableObject {
     @Published var location: CLLocation?
     @Published var placemark: CLPlacemark?
     
+    var weatherViewModel: WeatherViewModel?
+    
     override init() {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
     }
+    
     func requestLocation() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    func updateWeatherData() {
+        guard let viewModel = weatherViewModel, let location = location else { return }
+        viewModel.weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: viewModel.fetchCurrentWeatherData)
     }
 }
 
@@ -41,6 +49,9 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             self.location = location
+            print(location)
+            
+            updateWeatherData()
         }
     }
     
