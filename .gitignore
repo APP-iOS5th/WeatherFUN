@@ -130,5 +130,6 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+WeatherFUN.xcodeproj/project.xcworkspace/xcuserdata/smith.xcuserdatad/UserInterfaceState.xcuserstate
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode,swift
