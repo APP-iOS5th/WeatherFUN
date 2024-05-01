@@ -24,6 +24,10 @@ class LocationManager: NSObject, ObservableObject {
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
     }
+    func requestLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -39,4 +43,5 @@ extension LocationManager: CLLocationManagerDelegate {
             self.location = location
         }
     }
+    
 }

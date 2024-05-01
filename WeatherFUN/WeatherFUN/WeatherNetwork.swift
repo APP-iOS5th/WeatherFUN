@@ -53,6 +53,7 @@ class WeatherNetwork: ObservableObject {
                 print(error)
             }
         }
+        task.resume()
         
         // MARK: - 하루짜리 api 호출
         let task2 = URLSession.shared.dataTask(with: url2) { (data, response, error) in

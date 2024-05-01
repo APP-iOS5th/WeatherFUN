@@ -8,7 +8,11 @@
 import Foundation
 
 // MARK: - WeatherData
-struct WeatherData: Decodable {
+struct WeatherData: Decodable, Identifiable {
+    var id: UUID {
+      UUID()
+    }
+    //var id = UUID().uuidString
     let list: [List]
 }
 
