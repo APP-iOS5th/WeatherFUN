@@ -10,15 +10,17 @@ import CoreLocation
 
 
 class WeatherNetwork: ObservableObject {
+    
     @Published var weatherDatas = [WeatherData]()
-    @Published var OneweatherData: OneWeatherData?
+    @Published var oneDayWeatherDatas: OneWeatherData?
+    
     let weatherURL = "https://api.openweathermap.org/data/2.5/forecast?appid=2723e90839d963b6c533d30b9d1bacc9&units=metric"
     let oneDayURL = "https://api.openweathermap.org/data/2.5/weather?&appid=2723e90839d963b6c533d30b9d1bacc9&units=metric"
     
-    func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+    func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping () -> Void) {
+        
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
         let oneDayurlString = "\(oneDayURL)&lat=\(latitude)&lon=\(longitude)"
-        
         
         guard let url1 = URL(string: urlString) else {
             print("Invalid URL")
@@ -46,9 +48,8 @@ class WeatherNetwork: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.weatherDatas = [weatherDecodedData]
+                    completion()
                 }
-                
-                print("\(weatherDecodedData) \n")
             } catch {
                 print(error)
             }
@@ -69,17 +70,12 @@ class WeatherNetwork: ObservableObject {
             
             do {
                 let decoder = JSONDecoder()
-                let weatherResponse = try decoder.decode(OneWeatherResponse.self, from: data)
+                let weatherResponse = try decoder.decode(OneWeatherData.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self.OneweatherData = OneWeatherData(
-                        locationName: weatherResponse.name,
-                        temperature: weatherResponse.main.temp,
-                        condition: weatherResponse.weather.first?.description ?? ""
-                    )
+                    self.oneDayWeatherDatas = weatherResponse
+                    completion()
                 }
-                
-                //print("\(weatherDecodedData) \n")
             } catch {
                 print(error.localizedDescription)
             }
