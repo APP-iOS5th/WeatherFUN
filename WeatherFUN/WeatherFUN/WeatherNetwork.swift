@@ -10,7 +10,7 @@ import CoreLocation
 
 
 class WeatherNetwork: ObservableObject {
-    
+        
     @Published var weatherDatas = [WeatherData]()
     @Published var oneDayWeatherDatas: OneWeatherData?
     
@@ -21,6 +21,8 @@ class WeatherNetwork: ObservableObject {
         
         let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
         let oneDayurlString = "\(oneDayURL)&lat=\(latitude)&lon=\(longitude)"
+        print(latitude)
+        print(longitude)
         
         guard let url1 = URL(string: urlString) else {
             print("Invalid URL")
