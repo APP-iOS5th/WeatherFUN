@@ -13,18 +13,12 @@
 		4A8D33DD2BE0C624007C5582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33DC2BE0C624007C5582 /* ContentView.swift */; };
 		4A8D33DF2BE0C628007C5582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D33DE2BE0C628007C5582 /* Assets.xcassets */; };
 		4A8D33E22BE0C628007C5582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8D33E12BE0C628007C5582 /* Preview Assets.xcassets */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
 		4A8D33E92BE0DAA4007C5582 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */; };
 		4A8D33EB2BE0E344007C5582 /* WeatherNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */; };
 		4A8D33EF2BE12891007C5582 /* WeatherTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */; };
 		4A8D33F12BE136E9007C5582 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33F02BE136E9007C5582 /* LocationManager.swift */; };
-=======
 		53089D832BE0D00D005ECA94 /* WeatherDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53089D822BE0D00D005ECA94 /* WeatherDaysView.swift */; };
->>>>>>> 70e9f1a (Add WeatherDaysView UI)
-=======
 		53089D832BE0D00D005ECA94 /* MainVerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53089D822BE0D00D005ECA94 /* MainVerticalScrollView.swift */; };
->>>>>>> 8785788 (rename file)
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,19 +29,13 @@
 		4A8D33DC2BE0C624007C5582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A8D33DE2BE0C628007C5582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A8D33E12BE0C628007C5582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
 		4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetwork.swift; sourceTree = "<group>"; };
 		4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTestView.swift; sourceTree = "<group>"; };
 		4A8D33F02BE136E9007C5582 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4A8D33F22BE138C0007C5582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-=======
 		53089D822BE0D00D005ECA94 /* WeatherDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDaysView.swift; sourceTree = "<group>"; };
->>>>>>> 70e9f1a (Add WeatherDaysView UI)
-=======
 		53089D822BE0D00D005ECA94 /* MainVerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVerticalScrollView.swift; sourceTree = "<group>"; };
->>>>>>> 8785788 (rename file)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,16 +71,10 @@
 				4A8D33F22BE138C0007C5582 /* Info.plist */,
 				4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */,
 				4A8D33DC2BE0C624007C5582 /* ContentView.swift */,
-<<<<<<< HEAD
-<<<<<<< HEAD
 				063F68FB2BE0D33600C8CB49 /* TestView.swift */,
 				063F68F92BE0D05A00C8CB49 /* MainHorizontalScrollView.swift */,
-=======
 				53089D822BE0D00D005ECA94 /* WeatherDaysView.swift */,
->>>>>>> 70e9f1a (Add WeatherDaysView UI)
-=======
 				53089D822BE0D00D005ECA94 /* MainVerticalScrollView.swift */,
->>>>>>> 8785788 (rename file)
 				4A8D33DE2BE0C628007C5582 /* Assets.xcassets */,
 				4A8D33E02BE0C628007C5582 /* Preview Content */,
 				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
@@ -181,16 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
 				063F68FC2BE0D33600C8CB49 /* TestView.swift in Sources */,
 				4A8D33E92BE0DAA4007C5582 /* WeatherData.swift in Sources */,
-=======
 				53089D832BE0D00D005ECA94 /* WeatherDaysView.swift in Sources */,
->>>>>>> 70e9f1a (Add WeatherDaysView UI)
-=======
 				53089D832BE0D00D005ECA94 /* MainVerticalScrollView.swift in Sources */,
->>>>>>> 8785788 (rename file)
 				4A8D33DD2BE0C624007C5582 /* ContentView.swift in Sources */,
 				4A8D33EF2BE12891007C5582 /* WeatherTestView.swift in Sources */,
 				4A8D33F12BE136E9007C5582 /* LocationManager.swift in Sources */,
