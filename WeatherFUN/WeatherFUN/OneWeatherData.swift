@@ -9,9 +9,9 @@ import Foundation
 import CoreLocation
 
 struct OneWeatherData {
-    let locationName: String
-    let temperature: Double
-    let condition: String
+    var locationName: String
+    var temperature: Double
+    var condition: String
 }
 
 struct OneWeatherResponse: Codable {

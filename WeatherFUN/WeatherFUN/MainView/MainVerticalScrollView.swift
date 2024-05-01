@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainVerticalScrollView: View {
     var body: some View {
-        VStack {
+        ScrollView {
             HStack {
                 Image(systemName: "calendar")
                 Text("10-DAY FORECAST")
