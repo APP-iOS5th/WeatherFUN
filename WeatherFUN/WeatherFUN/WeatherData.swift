@@ -14,6 +14,7 @@ struct WeatherData: Decodable, Identifiable {
     }
     //var id = UUID().uuidString
     let list: [List]
+    let city: City
 }
 
 // MARK: - List
@@ -39,4 +40,9 @@ struct Weather: Decodable {
     let id: Int
     let main: String
     let description: String
+}
+
+//MARK: - City
+struct City: Decodable {
+    let name: String
 }
