@@ -22,12 +22,12 @@ struct MainView: View {
         .onAppear {
             locationManager.requestLocation()
         }
-        .onReceive(locationManager.$location) { location in
-            guard let location = location else { return }
-            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            //            print(location.coordinate.latitude)
-            //            print(location.coordinate.longitude)
-        }
+//        .onReceive(locationManager.$location) { location in
+//            guard let location = location else { return }
+//            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//            //            print(location.coordinate.latitude)
+//            //            print(location.coordinate.longitude)
+//        }
     }
 }
 
