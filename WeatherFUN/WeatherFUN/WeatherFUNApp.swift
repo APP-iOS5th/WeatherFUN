@@ -12,8 +12,8 @@ struct WeatherFUNApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            //WeatherTestView()
-            TestView()
+            WeatherTestView()
+//            TestView()
         }
     }
 }
