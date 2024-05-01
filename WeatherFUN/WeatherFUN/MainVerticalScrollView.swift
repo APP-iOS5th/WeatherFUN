@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeatherDaysView: View {
+struct MainVerticalScrollView: View {
     var body: some View {
         VStack {
             HStack {
@@ -59,5 +59,5 @@ struct WeatherDaysView: View {
 }
 
 #Preview {
-    WeatherDaysView()
+    MainVerticalScrollView()
 }
