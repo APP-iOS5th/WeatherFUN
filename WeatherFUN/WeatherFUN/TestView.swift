@@ -14,14 +14,6 @@ struct TestView: View {
     var body: some View {
         VStack{
             
-            ForEach(weatherNetwork.weatherDatas) { weather in
-                ForEach(weather.list) { list in
-                    let _ = print(list.dt_txt)
-                    
-                }
-                
-            }
-            
             MainHorizontalScrollView()
                 .frame(width: 360)
         }
@@ -30,7 +22,7 @@ struct TestView: View {
         }
         .onReceive(locationManager.$location) { location in
                     guard let location = location else { return }
-            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
 //            print(location.coordinate.latitude)
 //            print(location.coordinate.longitude)
                 }

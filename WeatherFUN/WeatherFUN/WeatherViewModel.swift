@@ -8,44 +8,48 @@
 import Foundation
 
 class WeatherViewModel: ObservableObject {
+    
     @Published var weatherNetwork = WeatherNetwork()
     @Published var locationManager: LocationManager = LocationManager()
-    init(weatherNetwork: WeatherNetwork = WeatherNetwork(), locationManager: LocationManager) {
-        weatherNetwork.fetchWeatherData(latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.longitude ?? 0.0)
-        self.weatherNetwork = weatherNetwork
-        self.locationManager = locationManager
+    var currentWeatherDatas: [String : String] = [:]
+    
+    init() {
+        locationManager.requestLocation()
+        weatherNetwork.fetchWeatherData(latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.longitude ?? 0.0, completion: fetchCurrentWeatherData)
     }
     
+    //나의위치
+    //인천광역시
+    //20도
+    //대체로 흐림
+    //최고: 최저:
+    
+    func fetchCurrentWeatherData() {
+        currentWeatherDatas.updateValue(currentLocation(), forKey: "currentLocation")
+        currentWeatherDatas.updateValue(currentTemprature(), forKey: "currentTemprature")
+        currentWeatherDatas.updateValue(currentTempratureDescription(), forKey: "currentTempratureDescription")
+        currentWeatherDatas.updateValue(currentMinTemperature(), forKey: "currentMinTemperature")
+        currentWeatherDatas.updateValue(currentMaxTemperature(), forKey: "currentMaxTemperature")
+    }
+    
+    func currentLocation() -> String {
+        return "\(String(describing: weatherNetwork.weatherDatas.first?.city.name))"
+    }
+    
+    func currentTemprature() -> String {
+        return "\(String(describing: weatherNetwork.oneDayWeatherDatas?.main.temp))"
+    }
+    
+    func currentTempratureDescription() -> String {
+        return "\(String(describing: weatherNetwork.oneDayWeatherDatas?.weather.first?.description))"
+    }
+    
+    func currentMinTemperature() -> String {
+        return "\(String(describing: weatherNetwork.oneDayWeatherDatas?.main.temp_min))"
+    }
+    
+    func currentMaxTemperature() -> String {
+        return "\(String(describing: weatherNetwork.oneDayWeatherDatas?.main.temp_max))"
+    }
 }
-//extension WeatherViewModel {
-//}
 
-//struct TestView: View {
-//    @StateObject var weatherNetwork = WeatherNetwork()
-//    @StateObject var locationManager: LocationManager = LocationManager()
-//    @State var weatherDatas: WeatherData?
-//    var body: some View {
-//        VStack{
-//            
-//            ForEach(weatherNetwork.weatherDatas) { weather in
-//                ForEach(weather.list) { list in
-//                    let _ = print(list.dt_txt)
-//                    
-//                }
-//                
-//            }
-//            
-//            MainHorizontalScrollView()
-//                .frame(width: 360)
-//        }
-//        .onAppear {
-//            locationManager.requestLocation()
-//        }
-//        .onReceive(locationManager.$location) { location in
-//                    guard let location = location else { return }
-//            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-////            print(location.coordinate.latitude)
-////            print(location.coordinate.longitude)
-//                }
-//    }
-//}
