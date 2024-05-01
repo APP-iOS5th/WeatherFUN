@@ -53,7 +53,7 @@ struct MainHorizontalScrollView: View {
             } //:HSTACK
             
         } //:VSTACK
-        .background(Color.blue)
+        .background(Color.customGray)
         .cornerRadius(10)
         
     }
