@@ -17,11 +17,12 @@ struct WeatherTestView: View {
     
     var body: some View {
         VStack {
-            Text("Latitude: \(String(describing: locationManager.location?.coordinate.latitude.description))")
-            Text("Longitude: \(String(describing: locationManager.location?.coordinate.longitude.description))")
-            
-            Text("weatherData: \(String(describing: weatherNetwork.weatherDatas.first?.list[0].main))")
-            Text("Test: \(weatherNetwork.OneweatherData?.temperature)")
+//            Text("Latitude: \(String(describing: locationManager.location?.coordinate.latitude.description))")
+//            Text("Longitude: \(String(describing: locationManager.location?.coordinate.longitude.description))")
+//            
+//            Text("weatherData: \(String(describing: weatherNetwork.weatherDatas.first?.list[0].main))")
+//            
+            Text("weatherData: \(String(describing: weatherNetwork.weatherDatas))")
             
 
         }
