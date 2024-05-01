@@ -93,11 +93,11 @@
 				4A8D33DE2BE0C628007C5582 /* Assets.xcassets */,
 				4A8D33E02BE0C628007C5582 /* Preview Content */,
 				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
+				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
 				4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */,
 				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
 				4A8D33F02BE136E9007C5582 /* LocationManager.swift */,
 				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
-				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
 			);
 			path = WeatherFUN;
 			sourceTree = "<group>";
