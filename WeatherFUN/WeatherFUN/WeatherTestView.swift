@@ -11,6 +11,7 @@ import CoreLocation
 struct WeatherTestView: View {
     
     @StateObject var weatherNetwork = WeatherNetwork()
+    //@StateObject var oneWeatherNetwork = WeatherNetwork()
     @StateObject var locationManager: LocationManager = LocationManager()
     @State var weatherDatas: WeatherData?
     
@@ -20,11 +21,14 @@ struct WeatherTestView: View {
             Text("Longitude: \(String(describing: locationManager.location?.coordinate.longitude.description))")
             
             Text("weatherData: \(String(describing: weatherNetwork.weatherDatas.first?.list[0].main))")
+            Text("Test: \(weatherNetwork.OneweatherData?.temperature)")
+            
 
         }
         .onAppear {
             self.weatherNetwork.fetchWeatherData(latitude: locationManager.location?.coordinate.latitude ?? 37.785834, longitude: locationManager.location?.coordinate.longitude ?? -122.406417)
         }
+
     }
 }
 
