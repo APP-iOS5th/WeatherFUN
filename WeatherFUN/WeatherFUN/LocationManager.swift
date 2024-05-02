@@ -21,7 +21,7 @@ class LocationManager: NSObject, ObservableObject {
     
     var oneDayWeatherViewModel: OneDayWeatherViewModel?
     var fiveDayWeatherViewModel: FiveWeatherViewModel?
-    
+    var weekWeatherViewModel: WeekWeatherViewModel?
     
     override init() {
         super.init()
@@ -43,6 +43,11 @@ class LocationManager: NSObject, ObservableObject {
         guard let fiveDayViewModel = fiveDayWeatherViewModel, let location = location else { return }
         fiveDayViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: fiveDayViewModel.fetchCurrentWeatherData)
     }
+    func updateWeekWeatherData() {
+        guard let weekWeatherViewModel = weekWeatherViewModel, let location = location else { return }
+        weekWeatherViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: weekWeatherViewModel.fetchWeekWeatherData)
+        
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -60,6 +65,7 @@ extension LocationManager: CLLocationManagerDelegate {
             
             updateOneDayWeatherData()
             updateFiveDayWeatherData()
+            updateWeekWeatherData()
         }
     }
     

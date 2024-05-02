@@ -31,7 +31,7 @@ struct List: Decodable, Identifiable {
 // MARK: - MainClass
 struct Main: Decodable {
     let temp: Double
-    //let temp_min, temp_max: Double?
+    let temp_min, temp_max: Double?
 }
 
 
