@@ -15,6 +15,7 @@ struct MainHorizontalScrollView: View {
     var body: some View {
         VStack {
             let _ = print(vm.fiveDayWeatherDates)
+            Text("\(vm.fiveDayWeatherDates)")
             HStack{
                 Text("날씨 어쩌구 저쩌구")
                     .font(.caption)

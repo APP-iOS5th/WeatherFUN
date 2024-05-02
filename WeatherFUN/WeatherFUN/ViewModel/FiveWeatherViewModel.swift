@@ -15,8 +15,8 @@ class FiveWeatherViewModel: ObservableObject {
     @Published var fiveDayWeatherDates: [FiveDayWeatherModel] = []
     
     init() {
-        locationManager.fiveDayWeatherViewModel = self
-        locationManager.requestLocation()
+        LocationManager.shared.fiveDayWeatherViewModel = self
+        LocationManager.shared.requestLocation()
     }
     
     func fetchCurrentWeatherData() {

@@ -12,6 +12,8 @@ import SwiftUI
 
 class LocationManager: NSObject, ObservableObject {
     
+    static let shared = LocationManager()
+    
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
     
