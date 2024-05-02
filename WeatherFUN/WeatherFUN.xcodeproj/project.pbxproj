@@ -66,6 +66,39 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		4A69DFBA2BE3159E00AF8CA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A69DFBB2BE315C100AF8CA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
+				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A69DFBC2BE315EE00AF8CA1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4A69DFBD2BE3160400AF8CA1 /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
+			);
+			path = TestView;
+			sourceTree = "<group>";
+		};
 		4A8D33CE2BE0C624007C5582 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +118,10 @@
 		4A8D33D92BE0C624007C5582 /* WeatherFUN */ = {
 			isa = PBXGroup;
 			children = (
+				4A8D33F02BE136E9007C5582 /* LocationManager.swift */,
+				4A69DFBC2BE315EE00AF8CA1 /* Network */,
+				4A69DFBB2BE315C100AF8CA1 /* Model */,
+				4A69DFBA2BE3159E00AF8CA1 /* ViewModel */,
 				063F69102BE2068700C8CB49 /* MainView */,
 				4A8D33F22BE138C0007C5582 /* Info.plist */,
 				4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */,
@@ -92,12 +129,7 @@
 				063F68FB2BE0D33600C8CB49 /* TestView.swift */,
 				4A8D33DE2BE0C628007C5582 /* Assets.xcassets */,
 				4A8D33E02BE0C628007C5582 /* Preview Content */,
-				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
-				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
-				4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */,
-				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
-				4A8D33F02BE136E9007C5582 /* LocationManager.swift */,
-				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
+				4A69DFBD2BE3160400AF8CA1 /* TestView */,
 			);
 			path = WeatherFUN;
 			sourceTree = "<group>";

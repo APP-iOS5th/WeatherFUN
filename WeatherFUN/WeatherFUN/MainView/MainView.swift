@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var weatherNetwork = WeatherNetwork()
-    @StateObject var locationManager: LocationManager = LocationManager()
-    @State var weatherDatas: WeatherData?
+
     var body: some View {
         VStack{
             TodayView()
@@ -19,15 +17,7 @@ struct MainView: View {
             MainVerticalScrollView()
                 .padding(.horizontal, 10)
         }
-        .onAppear {
-            locationManager.requestLocation()
-        }
-//        .onReceive(locationManager.$location) { location in
-//            guard let location = location else { return }
-//            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//            //            print(location.coordinate.latitude)
-//            //            print(location.coordinate.longitude)
-//        }
+
     }
 }
 
