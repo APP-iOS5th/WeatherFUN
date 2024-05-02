@@ -45,10 +45,10 @@ class LocationManager: NSObject, ObservableObject {
         guard let fiveDayViewModel = fiveDayWeatherViewModel, let location = location else { return }
         fiveDayViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: fiveDayViewModel.fetchCurrentWeatherData)
     }
-    
     func updateWeekWeatherData() {
         guard let weekWeatherViewModel = weekWeatherViewModel, let location = location else { return }
         weekWeatherViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: weekWeatherViewModel.fetchWeekWeatherData)
+        
     }
 }
 

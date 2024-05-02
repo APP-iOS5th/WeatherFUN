@@ -12,9 +12,7 @@ struct MainVerticalScrollView: View {
     @StateObject var weekWeatherViewModel = WeekWeatherViewModel()
     
     var body: some View {
-        // Text("\(weekWeatherViewModel.weekDatas)")
-        
-        ScrollView(showsIndicators: false) {
+        ScrollView {
             HStack {
                 Image(systemName: "calendar")
                 Text("5-DAY FORECAST")
