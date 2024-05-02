@@ -23,8 +23,6 @@ class WeekWeatherViewModel: ObservableObject {
     }
     
     func fetchWeekWeatherData() {
-        
-        
         for i in fiveDayWeatherNetwork.weatherDatas[0].list {
             guard let time = i.dt_txt else {return}
             
