@@ -7,28 +7,6 @@
 
 import Foundation
 
-//struct OneWeatherData {
-//    var locationName: String
-//    var temperature: Double
-//    var temp_min: Double
-//    var temp_max: Double
-//    var condition: String
-//}
-//
-//struct OneWeatherResponse: Codable {
-//    let name: String
-//    let main: OneMainWeather
-//    let weather: [OneWeather]
-//}
-//
-//struct OneMainWeather: Codable {
-//    let temp: Double
-//}
-//
-//struct OneWeather: Codable {
-//    let description: String
-//}
-
 // MARK: - Welcome
 struct OneWeatherData: Codable {
     let weather: [OneDayWeather]

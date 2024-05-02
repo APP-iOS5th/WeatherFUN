@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TestView: View {
-    @StateObject var weatherNetwork = WeatherNetwork()
+    @StateObject var weatherNetwork = OneDayWeatherNetwork()
     @StateObject var locationManager: LocationManager = LocationManager()
     @State var weatherDatas: WeatherData?
     var body: some View {

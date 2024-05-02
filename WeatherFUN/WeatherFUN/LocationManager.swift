@@ -17,7 +17,7 @@ class LocationManager: NSObject, ObservableObject {
     
     @Published var location: CLLocation?
     
-    var weatherViewModel: WeatherViewModel?
+    var oneDayWeatherViewModel: OneDayWeatherViewModel?
     override init() {
         super.init()
         self.locationManager.delegate = self
@@ -31,8 +31,8 @@ class LocationManager: NSObject, ObservableObject {
     }
     
     func updateWeatherData() {
-        guard let viewModel = weatherViewModel, let location = location else { return }
-        viewModel.weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: viewModel.fetchCurrentWeatherData)
+        guard let viewModel = oneDayWeatherViewModel, let location = location else { return }
+        viewModel.oneDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: viewModel.fetchCurrentWeatherData)
     }
 }
 
