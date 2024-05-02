@@ -11,9 +11,7 @@ import SwiftUI
 struct WeatherFUNApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            WeatherTestView()
-//            TestView()
+            MainView()
         }
     }
 }
