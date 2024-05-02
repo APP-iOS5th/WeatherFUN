@@ -16,6 +16,9 @@ class WeekWeatherViewModel: ObservableObject {
     @Published var weekWeatherData: [[WeekWeatherModel]] = Array(repeating: [], count: 5)
     
     @Published var weekDatas: [WeekWeatherModel] = [] // 최최최종 데이터
+    @Published var weekWeatherData: [[WeekWeatherModel]] = Array(repeating: [], count: 5)
+    
+    @Published var weekDatas: [WeekWeatherModel] = [] // 최최최종 데이터
     
     init() {
         LocationManager.shared.weekWeatherViewModel = self
@@ -38,14 +41,13 @@ class WeekWeatherViewModel: ObservableObject {
     }
     
     func fetchWeekWeatherData() {
-        
-        
         for i in fiveDayWeatherNetwork.weatherDatas[0].list {
             guard let time = i.dt_txt else {return}
             
             weekWeatherDatas.append(WeekWeatherModel(time: time, weather: i.weather[0].main, minTemperature: Int(i.main.temp_min ?? 0.0), maxTemperature: Int(i.main.temp_max ?? 0.0)))
         }
         
+        //사용자의 현재 시간에서 시간만 가져옴
         //사용자의 현재 시간에서 시간만 가져옴
         var formattedDate: String {
             let currentTime = Date()
@@ -59,13 +61,18 @@ class WeekWeatherViewModel: ObservableObject {
             switch i.time.components(separatedBy: ["-", " "])[2]{
             case formattedDate:
                 weekWeatherData[0].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
+                weekWeatherData[0].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
             case String(format:"%02d", (Int(formattedDate) ?? 0)+1):
+                weekWeatherData[1].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
                 weekWeatherData[1].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
             case String(format:"%02d", (Int(formattedDate) ?? 0)+2):
                 weekWeatherData[2].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
+                weekWeatherData[2].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
             case String(format:"%02d", (Int(formattedDate) ?? 0)+3):
                 weekWeatherData[3].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
+                weekWeatherData[3].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
             case String(format:"%02d", (Int(formattedDate) ?? 0)+4):
+                weekWeatherData[4].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
                 weekWeatherData[4].append(WeekWeatherModel(time: i.time, weather: i.weather, minTemperature: i.minTemperature, maxTemperature: i.maxTemperature))
             default:
                 continue
