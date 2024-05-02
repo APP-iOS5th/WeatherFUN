@@ -8,29 +8,22 @@
 import SwiftUI
 
 struct TodayView: View {
-//    @Binding var title: String
-//    @Binding var location: String
-//    @Binding var temp: Int
-//    @Binding var maxTemp: Int
-//    @Binding var minTemp: Int
-
+    
+    @StateObject var weatherViewModel = WeatherViewModel()
+    
     var body: some View {
         VStack {
             Text("나의 위치")
                 .font(.largeTitle)
-            Text("대전 광역시")
-                .font(.caption)
-            Text("9˚")
+            Text(weatherViewModel.currentWeatherDatas["currentLocation"] ?? "N/A")
+            Text("\(weatherViewModel.currentWeatherDatas["currentTemprature"] ?? "N/A")˚")
                 .font(.system(size: 100))
                 .padding(.leading, 20)
-                
-            Text("흐림")
+            
+            Text(weatherViewModel.currentWeatherDatas["currentTempratureDescription"] ?? "N/A")
                 .padding(.trailing, 20)
-            Text("최고: 19˚  최저: 10˚")
-            
-            
+            Text("최고: \(weatherViewModel.currentWeatherDatas["currentMaxTemperature"] ?? "N/A")˚  최저: \(weatherViewModel.currentWeatherDatas["currentMinTemperature"] ?? "N/A")˚")
         }
-    
     }
 }
 

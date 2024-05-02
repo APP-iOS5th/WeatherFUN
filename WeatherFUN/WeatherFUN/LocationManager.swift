@@ -16,7 +16,6 @@ class LocationManager: NSObject, ObservableObject {
     let geoCoder = CLGeocoder()
     
     @Published var location: CLLocation?
-    @Published var placemark: CLPlacemark?
     
     var weatherViewModel: WeatherViewModel?
     
