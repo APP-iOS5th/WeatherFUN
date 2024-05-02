@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct WeatherFUNApp: App {
     @StateObject var vm = OneDayWeatherViewModel()
+
     var body: some Scene {
         WindowGroup {
 //            MainView()
