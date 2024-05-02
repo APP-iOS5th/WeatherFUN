@@ -24,6 +24,8 @@
 		4A8D33EF2BE12891007C5582 /* WeatherTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */; };
 		4A8D33F12BE136E9007C5582 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D33F02BE136E9007C5582 /* LocationManager.swift */; };
 		53089D832BE0D00D005ECA94 /* MainVerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53089D822BE0D00D005ECA94 /* MainVerticalScrollView.swift */; };
+		53BC4C522BE34F1900AC514A /* WeekWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC4C512BE34F1900AC514A /* WeekWeatherViewModel.swift */; };
+		53BC4C542BE3510C00AC514A /* WeekWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BC4C532BE3510C00AC514A /* WeekWeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		4A8D33F02BE136E9007C5582 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4A8D33F22BE138C0007C5582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53089D822BE0D00D005ECA94 /* MainVerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVerticalScrollView.swift; sourceTree = "<group>"; };
+		53BC4C512BE34F1900AC514A /* WeekWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewModel.swift; sourceTree = "<group>"; };
+		53BC4C532BE3510C00AC514A /* WeekWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			children = (
 				063F690C2BE2050100C8CB49 /* OneDayWeatherViewModel.swift */,
 				063F69192BE3265300C8CB49 /* FiveWeatherViewModel.swift */,
+				53BC4C512BE34F1900AC514A /* WeekWeatherViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
 				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
 				063F69172BE3207800C8CB49 /* FiveDayWeatherModel.swift */,
+				53BC4C532BE3510C00AC514A /* WeekWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 			files = (
 				063F69122BE2069C00C8CB49 /* MainView.swift in Sources */,
 				4A8D33E92BE0DAA4007C5582 /* WeatherData.swift in Sources */,
+				53BC4C542BE3510C00AC514A /* WeekWeatherModel.swift in Sources */,
 				53089D832BE0D00D005ECA94 /* MainVerticalScrollView.swift in Sources */,
 				063F691C2BE3278900C8CB49 /* FiveDayWeatherNewwork.swift in Sources */,
 				53089D832BE0D00D005ECA94 /* MainVerticalScrollView.swift in Sources */,
@@ -233,6 +240,7 @@
 				4A8D33DB2BE0C624007C5582 /* WeatherFUNApp.swift in Sources */,
 				063F691A2BE3265300C8CB49 /* FiveWeatherViewModel.swift in Sources */,
 				063F690D2BE2050100C8CB49 /* OneDayWeatherViewModel.swift in Sources */,
+				53BC4C522BE34F1900AC514A /* WeekWeatherViewModel.swift in Sources */,
 				4A8D33EB2BE0E344007C5582 /* OneDayWeatherNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
