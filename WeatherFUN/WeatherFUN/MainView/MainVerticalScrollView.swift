@@ -12,8 +12,8 @@ struct MainVerticalScrollView: View {
     @StateObject var weekWeatherViewModel = WeekWeatherViewModel()
     
     var body: some View {
-//        let _ = print("------- 구분 -------")
-//        let _ = print(weekWeatherViewModel.weekWeatherDatas)
+        let _ = print("------- 구분 -------")
+        let _ = print(weekWeatherViewModel.weekWeatherDatas)
         
         Text("\(weekWeatherViewModel.weekWeatherDatas)")
         
