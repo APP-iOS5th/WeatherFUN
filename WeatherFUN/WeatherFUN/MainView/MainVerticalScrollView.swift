@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct MainVerticalScrollView: View {
+    
+    @StateObject var weekWeatherViewModel = WeekWeatherViewModel()
+    
     var body: some View {
+//        let _ = print("------- 구분 -------")
+//        let _ = print(weekWeatherViewModel.weekWeatherDatas)
+        
+        Text("\(weekWeatherViewModel.weekWeatherDatas)")
+        
         ScrollView {
             HStack {
                 Image(systemName: "calendar")
-                Text("10-DAY FORECAST")
+                Text("5-DAY FORECAST")
                     .font(.system(size: 12))
                 Spacer()
             }
