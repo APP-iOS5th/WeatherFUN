@@ -11,7 +11,7 @@ import SwiftUI
 class OneDayWeatherViewModel: ObservableObject {
     
     @Published var oneDayWeatherNetwork = OneDayWeatherNetwork()
-    @Published var locationManager: LocationManager = LocationManager()
+    //@Published var locationManager: LocationManager = LocationManager()
     @Published var currentWeatherDatas: [String : String] = [:]
     
     init() {

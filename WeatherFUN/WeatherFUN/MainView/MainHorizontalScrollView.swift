@@ -14,8 +14,8 @@ struct MainHorizontalScrollView: View {
     
     var body: some View {
         VStack {
-            let _ = print(vm.fiveDayWeatherDates)
-            Text("\(vm.fiveDayWeatherDates)")
+            //let _ = print(vm.fiveDayWeatherDates)
+            //Text("\(vm.today)")
             HStack{
                 Text("날씨 어쩌구 저쩌구")
                     .font(.caption)
@@ -32,17 +32,17 @@ struct MainHorizontalScrollView: View {
             HStack{
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        ForEach(0...8, id: \.self){ hour in
+                        ForEach(vm.today){ day in
                             VStack{
-                                Text("지금")
+                                Text("\(day.time)시")
                                     .fontWeight(.heavy)
                                     .font(.caption)
                                     .padding(.bottom, 5)
                                     .foregroundColor(.white)
-                                Image(systemName: "sun.horizon")
-                                    .foregroundColor(.yellow)
+                                Image(systemName: day.image)
+                                    .renderingMode(.original)
                                     .padding(.bottom, 5)
-                                Text("\(hour)도")
+                                Text("\(Int(day.temp))˚")
                                     .foregroundColor(.white)
                                     .bold()
                             }
