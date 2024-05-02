@@ -12,7 +12,7 @@ struct WeatherFUNApp: App {
     var body: some Scene {
         WindowGroup {
 //            MainView()
-            MainHorizontalScrollView()
+            MainVerticalScrollView()
         }
     }
 }
