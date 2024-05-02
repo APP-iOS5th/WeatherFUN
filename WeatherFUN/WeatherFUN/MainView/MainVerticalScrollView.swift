@@ -12,12 +12,9 @@ struct MainVerticalScrollView: View {
     @StateObject var weekWeatherViewModel = WeekWeatherViewModel()
     
     var body: some View {
-        let _ = print("------- 구분 -------")
-        let _ = print(weekWeatherViewModel.weekWeatherDatas)
+        // Text("\(weekWeatherViewModel.weekDatas)")
         
-        Text("\(weekWeatherViewModel.weekWeatherDatas)")
-        
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             HStack {
                 Image(systemName: "calendar")
                 Text("5-DAY FORECAST")
@@ -27,20 +24,20 @@ struct MainVerticalScrollView: View {
             .padding([.top, .leading])
             .foregroundStyle(.white.opacity(0.9))
             
-            ForEach(0...5, id: \.self) { temp in
+            ForEach(weekWeatherViewModel.weekDatas) { day in
                 Divider()
                     .overlay(Color.white.opacity(0.9))
                     .padding(.horizontal, 10)
                 
                 HStack {
-                    Text("Today")
+                    Text("\(day.time)일")
                         .bold()
                     Spacer()
                     
-                    Image(systemName: "sun.min.fill")
+                    Image(systemName: day.weatherIcon)
                     Spacer()
                     
-                    Text("14˚")
+                    Text("\(day.minTemperature)˚")
                         .bold()
                         .opacity(0.5)
                     
@@ -54,7 +51,7 @@ struct MainVerticalScrollView: View {
                             .foregroundStyle(.green)
                     }
                     
-                    Text("21˚")
+                    Text("\(day.maxTemperature)˚")
                         .bold()
                 }
                 .foregroundStyle(.white)
