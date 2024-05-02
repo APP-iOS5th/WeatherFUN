@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct WeekWeatherModel {
+struct WeekWeatherModel: Identifiable {
+    let id = UUID()
     let time: String
     let weather: String
     let minTemperature: Int
