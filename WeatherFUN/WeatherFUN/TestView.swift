@@ -21,7 +21,7 @@ struct TestView: View {
             locationManager.requestLocation()
         }
         .onReceive(locationManager.$location) { location in
-                    guard let location = location else { return }
+            guard location != nil else { return }
 //            weatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
 //            print(location.coordinate.latitude)
 //            print(location.coordinate.longitude)
