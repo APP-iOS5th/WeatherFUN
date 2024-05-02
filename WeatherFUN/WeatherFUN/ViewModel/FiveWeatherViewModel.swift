@@ -9,9 +9,15 @@ import Foundation
 import SwiftUI
 
 class FiveWeatherViewModel: ObservableObject {
+    
     @Published var fiveDayWeatherNetwork = FiveDayWeatherNetwork()
     @Published var locationManager: LocationManager = LocationManager()
     @Published var fiveDayWeatherDates: [FiveDayWeatherModel] = []
+    
+    init() {
+        locationManager.fiveDayWeatherViewModel = self
+        locationManager.requestLocation()
+    }
     
     func fetchCurrentWeatherData() {
         for i in fiveDayWeatherNetwork.weatherDatas[0].list {
