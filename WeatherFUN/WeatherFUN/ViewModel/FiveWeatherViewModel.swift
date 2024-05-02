@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 class FiveWeatherViewModel: ObservableObject {
-    @Published var weatherNetwork = FiveWeatherNetwork()
+    @Published var fiveDayWeatherNetwork = FiveDayWeatherNetwork()
     @Published var locationManager: LocationManager = LocationManager()
-    @Published var fiveDayWeatherDates: [FiveWeatherModel] = []
+    @Published var fiveDayWeatherDates: [FiveDayWeatherModel] = []
     
     func fetchCurrentWeatherData() {
-        for i in weatherNetwork.weatherDatas[0].list {
+        for i in fiveDayWeatherNetwork.weatherDatas[0].list {
             guard let time = i.dt_txt else {return}
-            fiveDayWeatherDates.append(FiveWeatherModel(time: time, weather: i.weather[0].main, temp: i.main.temp))
+            fiveDayWeatherDates.append(FiveDayWeatherModel(time: time, weather: i.weather[0].main, temp: i.main.temp))
         }
        
     }

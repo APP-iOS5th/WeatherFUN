@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TodayView: View {
     
-    @StateObject var weatherViewModel = WeatherViewModel()
+    @StateObject var weatherViewModel = OneDayWeatherViewModel()
     
     var body: some View {
         VStack {

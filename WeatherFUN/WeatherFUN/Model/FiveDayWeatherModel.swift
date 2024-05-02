@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FiveWeatherModel {
+struct FiveDayWeatherModel {
     let time: String
     let weather: String
     let temp: Double
