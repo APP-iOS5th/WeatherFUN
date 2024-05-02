@@ -13,7 +13,6 @@ class OneDayWeatherNetwork: ObservableObject {
         
     @Published var oneDayWeatherDatas: OneWeatherData?
     
-    
     let oneDayURL = "https://api.openweathermap.org/data/2.5/weather?&appid=2723e90839d963b6c533d30b9d1bacc9&units=metric"
     
     func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping () -> Void) {
