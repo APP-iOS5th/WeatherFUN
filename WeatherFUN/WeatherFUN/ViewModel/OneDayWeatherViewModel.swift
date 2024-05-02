@@ -15,8 +15,8 @@ class OneDayWeatherViewModel: ObservableObject {
     @Published var currentWeatherDatas: [String : String] = [:]
     
     init() {
-        locationManager.oneDayWeatherViewModel = self
-        locationManager.requestLocation()
+        LocationManager.shared.oneDayWeatherViewModel = self
+        LocationManager.shared.requestLocation()
     }
 
     func fetchCurrentWeatherData() {
