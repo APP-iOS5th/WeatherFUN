@@ -10,10 +10,11 @@ import SwiftUI
 struct MainHorizontalScrollView: View {
     //시간, 온도, 이미지,
     //상단 텍스트
-    
+    @StateObject var vm = FiveWeatherViewModel()
     
     var body: some View {
         VStack {
+            let _ = print(vm.fiveDayWeatherDates)
             HStack{
                 Text("날씨 어쩌구 저쩌구")
                     .font(.caption)

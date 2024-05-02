@@ -23,7 +23,7 @@ struct List: Decodable, Identifiable {
         return String(dt)
     }
     let dt: Int
-    let main: Main
+    let main: Main //온도
     let weather: [Weather]
     let dt_txt: String? //날짜
 }
@@ -31,15 +31,15 @@ struct List: Decodable, Identifiable {
 // MARK: - MainClass
 struct Main: Decodable {
     let temp: Double
-    let temp_min, temp_max: Double?
+    //let temp_min, temp_max: Double?
 }
 
 
 // MARK: - Weather
 struct Weather: Decodable {
-    let id: Int
+    //let id: Int
     let main: String
-    let description: String
+    //let description: String
 }
 
 //MARK: - City

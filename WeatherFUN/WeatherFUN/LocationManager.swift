@@ -18,7 +18,6 @@ class LocationManager: NSObject, ObservableObject {
     @Published var location: CLLocation?
     
     var weatherViewModel: WeatherViewModel?
-    
     override init() {
         super.init()
         self.locationManager.delegate = self
