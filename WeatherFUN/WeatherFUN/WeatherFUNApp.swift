@@ -13,7 +13,7 @@ struct WeatherFUNApp: App {
         WindowGroup {
 //            ContentView()
             //WeatherTestView()
-            TestView()
+            MainView()
         }
     }
 }

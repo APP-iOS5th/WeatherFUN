@@ -13,20 +13,20 @@ struct TodayView: View {
 //    @Binding var temp: Int
 //    @Binding var maxTemp: Int
 //    @Binding var minTemp: Int
-
+    @StateObject var vm: WeatherViewModel
     var body: some View {
         VStack {
             Text("나의 위치")
                 .font(.largeTitle)
-            Text("대전 광역시")
+            Text("\(vm.todayLocation())")
                 .font(.caption)
-            Text("9˚")
+            Text("\(vm.todayTemp())˚")
                 .font(.system(size: 100))
                 .padding(.leading, 20)
                 
             Text("흐림")
                 .padding(.trailing, 20)
-            Text("최고: 19˚  최저: 10˚")
+           // Text("최고: \(vm.todayMaxMinTemp())˚  최저: \(vm.todayMinTemp())˚")
             
             
         }
@@ -34,6 +34,6 @@ struct TodayView: View {
     }
 }
 
-#Preview {
-    TodayView()
-}
+//#Preview {
+//    TodayView()
+//}

@@ -14,13 +14,15 @@ struct TestView: View {
     var body: some View {
         VStack{
             
-            ForEach(weatherNetwork.weatherDatas) { weather in
-                ForEach(weather.list) { list in
-                    let _ = print(list.dt_txt)
-                    
-                }
-                
-            }
+//            ForEach(weatherNetwork.weatherDatas) { weather in
+//                ForEach(weather.list) { list in
+//                    let _ = print(list.dt_txt)
+//                    
+//                    
+//                }
+//                
+//            }
+//            
             
             MainHorizontalScrollView()
                 .frame(width: 360)

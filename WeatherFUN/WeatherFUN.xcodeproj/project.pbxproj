@@ -66,6 +66,40 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		063F69132BE2366D00C8CB49 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */,
+				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
+				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
+				4A8D33F02BE136E9007C5582 /* LocationManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		063F69142BE236A300C8CB49 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		063F69152BE236AB00C8CB49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		063F69162BE236CE00C8CB49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				063F69102BE2068700C8CB49 /* MainView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4A8D33CE2BE0C624007C5582 = {
 			isa = PBXGroup;
 			children = (
@@ -85,19 +119,17 @@
 		4A8D33D92BE0C624007C5582 /* WeatherFUN */ = {
 			isa = PBXGroup;
 			children = (
-				063F69102BE2068700C8CB49 /* MainView */,
-				4A8D33F22BE138C0007C5582 /* Info.plist */,
 				4A8D33DA2BE0C624007C5582 /* WeatherFUNApp.swift */,
+				063F69132BE2366D00C8CB49 /* Service */,
+				063F69152BE236AB00C8CB49 /* Model */,
+				063F69142BE236A300C8CB49 /* ViewModel */,
+				063F69162BE236CE00C8CB49 /* View */,
 				4A8D33DC2BE0C624007C5582 /* ContentView.swift */,
 				063F68FB2BE0D33600C8CB49 /* TestView.swift */,
+				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
+				4A8D33F22BE138C0007C5582 /* Info.plist */,
 				4A8D33DE2BE0C628007C5582 /* Assets.xcassets */,
 				4A8D33E02BE0C628007C5582 /* Preview Content */,
-				4A8D33EE2BE12891007C5582 /* WeatherTestView.swift */,
-				4A8D33EA2BE0E344007C5582 /* WeatherNetwork.swift */,
-				063F690A2BE1DFC200C8CB49 /* OneWeatherData.swift */,
-				4A8D33F02BE136E9007C5582 /* LocationManager.swift */,
-				4A8D33E82BE0DAA4007C5582 /* WeatherData.swift */,
-				063F690C2BE2050100C8CB49 /* WeatherViewModel.swift */,
 			);
 			path = WeatherFUN;
 			sourceTree = "<group>";
