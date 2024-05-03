@@ -45,17 +45,10 @@ class LocationManager: NSObject, ObservableObject {
         guard let fiveDayViewModel = fiveDayWeatherViewModel, let location = location else { return }
         fiveDayViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: fiveDayViewModel.fetchCurrentWeatherData)
     }
-<<<<<<< HEAD
     
     func updateWeekWeatherData() {
         guard let weekWeatherViewModel = weekWeatherViewModel, let location = location else { return }
         weekWeatherViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: weekWeatherViewModel.fetchWeekWeatherData)
-=======
-    func updateWeekWeatherData() {
-        guard let weekWeatherViewModel = weekWeatherViewModel, let location = location else { return }
-        weekWeatherViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: weekWeatherViewModel.fetchWeekWeatherData)
-        
->>>>>>> d02c5b4 (수직 뷰 데이터 받아오기)
     }
 }
 
