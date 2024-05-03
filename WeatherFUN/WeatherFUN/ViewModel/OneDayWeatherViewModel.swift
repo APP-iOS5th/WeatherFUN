@@ -13,7 +13,6 @@ class OneDayWeatherViewModel: ObservableObject {
     @Published var oneDayWeatherNetwork = OneDayWeatherNetwork()
     @Published var currentWeatherDatas: [String : String] = [:]
     @Published var gradientBackgroundColor = LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
-//    @Published var gradientBackgroundColor = LinearGradient(gradient: Gradient(colors: [Color(red: 0.87, green: 0.98, blue: 0.98), Color(red: 0.28, green: 0.20, blue: 0.83)]), startPoint: .topLeading, endPoint: .bottomTrailing)
 
     init() {
         LocationManager.shared.oneDayWeatherViewModel = self
@@ -29,6 +28,7 @@ class OneDayWeatherViewModel: ObservableObject {
         {
             currentWeatherDatas.updateValue(cityName, forKey: "currentLocation")
             currentWeatherDatas.updateValue("\(String(Int(temperature)))", forKey: "currentTemprature")
+            currentWeatherDatas.updateValue("\(String(Int(temperature)))", forKey: "currentTemprature")
             currentWeatherDatas.updateValue(currentTempratureDescription, forKey: "currentTempratureDescription")
             currentWeatherDatas.updateValue("\(String(Int(minTemperature)))", forKey: "currentMinTemperature")
             currentWeatherDatas.updateValue("\(String(Int(maxTemperature)))", forKey: "currentMaxTemperature")
@@ -40,14 +40,10 @@ class OneDayWeatherViewModel: ObservableObject {
             currentWeatherDatas.updateValue("N/A", forKey: "currentMaxTemperature")
         }
         changeGradientBackgroundColor()
-//        gradientBackgroundColor = changeGradientBackgroundColor()
-        print("gradientBackgroundColor :\(gradientBackgroundColor)")
     }
     
     func changeGradientBackgroundColor() {
         
-//        guard let weather = oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main else { return }
-        //print(oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main)
         if let weather = oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main {
             
             let startColor: Color
@@ -84,31 +80,6 @@ class OneDayWeatherViewModel: ObservableObject {
             }
             
             print("Func gradientBackgroundColor :\(gradientBackgroundColor)")
-    //        return LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: .topLeading, endPoint: .bottomTrailing)
         }
     }
 }
-
-/*
- //clear
- UIColor(red: 0.87, green: 0.98, blue: 0.98, alpha: 1.00)
- UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00)
- 
- //Thunderstorm
- UIColor(red: 0.07, green: 0.06, blue: 0.25, alpha: 1.00)
- UIColor(red: 0.98, green: 0.79, blue: 0.14, alpha: 1.00)
- 
- //Drizzle ,Clouds
- UIColor(red: 0.12, green: 0.15, blue: 0.18, alpha: 1.00)
- UIColor(red: 0.28, green: 0.33, blue: 0.38, alpha: 1.00)
- 
- //Rain
- UIColor(red: 0.12, green: 0.15, blue: 0.18, alpha: 1.00)
- UIColor(red: 0.28, green: 0.33, blue: 0.38, alpha: 1.00)
- 
- //Snow
- 
- UIColor(red: 0.58, green: 0.65, blue: 0.65, alpha: 1.00)
- UIColor(red: 0.50, green: 0.55, blue: 0.55, alpha: 1.00)
- */
-

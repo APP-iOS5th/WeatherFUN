@@ -13,7 +13,6 @@ struct WeatherFUNApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            MainView()
             MainView()
                 .environmentObject(vm)
         }

@@ -19,9 +19,8 @@ struct MainHorizontalScrollView: View {
     }
     var body: some View {
         VStack {
-            //let _ = print(vm.fiveDayWeatherDates)
             HStack{
-                Text("날씨 어쩌구 저쩌구")
+                Label("시간별 일기예보", systemImage: "clock")
                     .font(.caption)
                     .foregroundColor(.white)
                     .padding(.leading, 10)
