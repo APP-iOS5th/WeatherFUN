@@ -1,5 +1,5 @@
 //
-//  TemperatureBar.swift
+//  TemperatureBarView.swift
 //  WeatherFUN
 //
 //  Created by uunwon on 5/3/24.
@@ -24,10 +24,9 @@ struct TemperatureBarView: View {
                 .cornerRadius(barHeight / 2)
                 .opacity(0.25)
             
-            Rectangle()
-                .frame(width: calculateBarWidth(), height: barHeight)
-                .cornerRadius(barHeight / 2)
-                .foregroundColor(.green)
+            LinearGradient(gradient: Gradient(colors: [Color.green, Color.yellow, Color.red]), startPoint: .leading, endPoint: .trailing)
+                            .frame(width: calculateBarWidth(), height: barHeight)
+                            .cornerRadius(barHeight / 2)
         }
     }
     
@@ -40,7 +39,7 @@ struct TemperatureBarView: View {
     }
 }
 
-struct TemperatureBar_Previews: PreviewProvider {
+struct TemperatureBarView_Previews: PreviewProvider {
     static var previews: some View {
         TemperatureBarView(minTemperature: 10, maxTemperature: 15)
             .frame(width: 200, height: 50)
