@@ -11,11 +11,15 @@ struct MainHorizontalScrollView: View {
     //시간, 온도, 이미지,
     //상단 텍스트
     @StateObject var vm = FiveWeatherViewModel()
-    
+    var formattedDate: String {
+        let currentTime = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        return dateFormatter.string(from: currentTime)
+    }
     var body: some View {
         VStack {
             //let _ = print(vm.fiveDayWeatherDates)
-            //Text("\(vm.today)")
             HStack{
                 Text("날씨 어쩌구 저쩌구")
                     .font(.caption)
@@ -28,17 +32,25 @@ struct MainHorizontalScrollView: View {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.white)
-                
+            
             HStack{
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
                         ForEach(vm.today){ day in
                             VStack{
-                                Text("\(day.time)시")
-                                    .fontWeight(.heavy)
-                                    .font(.caption)
-                                    .padding(.bottom, 5)
-                                    .foregroundColor(.white)
+                                if vm.nowId == day.id{
+                                    Text("지금")
+                                        .fontWeight(.heavy)
+                                        .font(.caption)
+                                        .padding(.bottom, 5)
+                                        .foregroundColor(.white)
+                                }else{
+                                    Text("\(day.time)시")
+                                        .fontWeight(.heavy)
+                                        .font(.caption)
+                                        .padding(.bottom, 5)
+                                        .foregroundColor(.white)
+                                }
                                 Image(systemName: day.image)
                                     .renderingMode(.original)
                                     .padding(.bottom, 5)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var weatherViewModel = OneDayWeatherViewModel()
 
     var body: some View {
         VStack{
@@ -17,6 +18,10 @@ struct MainView: View {
             MainVerticalScrollView()
                 .padding(.horizontal, 10)
         }
+        .onAppear{
+            weatherViewModel.colorChange()
+        }
+        .background(weatherViewModel.backgroundColor)
 
     }
 }
