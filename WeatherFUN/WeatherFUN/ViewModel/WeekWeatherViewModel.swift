@@ -128,9 +128,6 @@ class WeekWeatherViewModel: ObservableObject {
                 print("유효하지 않은 날짜 형식입니다")
             }
         }
-        
-       // print(weekDatas)
-        
     }
     
 }

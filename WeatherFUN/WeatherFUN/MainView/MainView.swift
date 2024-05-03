@@ -14,12 +14,6 @@ struct MainView: View {
     @State var color1 =  LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
     
     var body: some View {
-        //            GeometryReader { _ in
-        //                SpriteView(scene: RainFall(), options: [.allowsTransparency])
-        //            }
-        //            .ignoresSafeArea()
-        //            .zIndex(0)
-        
         VStack{
             TodayView()
             MainHorizontalScrollView()
@@ -30,9 +24,6 @@ struct MainView: View {
         .background(color1
             .animation(.easeInOut)
         )
-        .onAppear {
-            color1 = vm.gradientBackgroundColor
-        }
         .onReceive( vm.$gradientBackgroundColor ) { color in
             color1 = color
             print("color: \(color)")
