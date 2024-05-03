@@ -14,12 +14,13 @@
 ## 개발 역할분담 <img src="https://img.shields.io/badge/Discord-5865F2?style=plastic&logo=Discord&logoColor=white">
 
 **박성민, 정종원**  
-* 메인 페이지 가로 스크롤 뷰 UI
+* 메인 페이지 현재 위치 & 가로 스크롤 뷰
 * 날씨 API
 
 **채윤원**  
-* 메인 페이지 세로 스크롤 뷰 UI
+* 메인 페이지 세로 스크롤 뷰
 * README 페이지 작성
 
 ## 사용 API
+* [OpenWeatehr - Current Weater](https://openweathermap.org/current)
 * [OpenWeather - 5 Day / 3 Hour Forecast](https://openweathermap.org/forecast5)
