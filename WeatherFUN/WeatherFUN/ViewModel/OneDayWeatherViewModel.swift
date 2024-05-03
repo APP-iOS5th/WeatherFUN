@@ -28,10 +28,10 @@ class OneDayWeatherViewModel: ObservableObject {
            let maxTemperature = oneDayWeatherNetwork.oneDayWeatherDatas?.main.temp_max
         {
             currentWeatherDatas.updateValue(cityName, forKey: "currentLocation")
-            currentWeatherDatas.updateValue("\(temperature)", forKey: "currentTemprature")
+            currentWeatherDatas.updateValue("\(String(Int(temperature)))", forKey: "currentTemprature")
             currentWeatherDatas.updateValue(currentTempratureDescription, forKey: "currentTempratureDescription")
-            currentWeatherDatas.updateValue("\(minTemperature)", forKey: "currentMinTemperature")
-            currentWeatherDatas.updateValue("\(maxTemperature)", forKey: "currentMaxTemperature")
+            currentWeatherDatas.updateValue("\(String(Int(minTemperature)))", forKey: "currentMinTemperature")
+            currentWeatherDatas.updateValue("\(String(Int(maxTemperature)))", forKey: "currentMaxTemperature")
         } else {
             currentWeatherDatas.updateValue("N/A", forKey: "currentLocation")
             currentWeatherDatas.updateValue("N/A", forKey: "currentTemperature")
@@ -47,7 +47,7 @@ class OneDayWeatherViewModel: ObservableObject {
     func changeGradientBackgroundColor() {
         
 //        guard let weather = oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main else { return }
-        print(oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main)
+        //print(oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main)
         if let weather = oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.main {
             
             let startColor: Color
