@@ -14,11 +14,8 @@ class WeekWeatherViewModel: ObservableObject {
     @Published var locationManager: LocationManager = LocationManager()
     @Published var weekWeatherDatas: [WeekWeatherModel] = []
     @Published var weekWeatherData: [[WeekWeatherModel]] = Array(repeating: [], count: 5)
-    
     @Published var weekDatas: [WeekWeatherModel] = [] // 최최최종 데이터
-    @Published var weekWeatherData: [[WeekWeatherModel]] = Array(repeating: [], count: 5)
     
-    @Published var weekDatas: [WeekWeatherModel] = [] // 최최최종 데이터
     
     init() {
         LocationManager.shared.weekWeatherViewModel = self
