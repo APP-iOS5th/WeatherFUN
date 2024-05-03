@@ -13,7 +13,7 @@ class OneDayWeatherViewModel: ObservableObject {
     @Published var oneDayWeatherNetwork = OneDayWeatherNetwork()
     //@Published var locationManager: LocationManager = LocationManager()
     @Published var currentWeatherDatas: [String : String] = [:]
-    
+    @Published var backgroundColor: Color = .white
     init() {
         LocationManager.shared.oneDayWeatherViewModel = self
         LocationManager.shared.requestLocation()
@@ -37,6 +37,24 @@ class OneDayWeatherViewModel: ObservableObject {
             currentWeatherDatas.updateValue("N/A", forKey: "currentTemperatureDescription")
             currentWeatherDatas.updateValue("N/A", forKey: "currentMinTemperature")
             currentWeatherDatas.updateValue("N/A", forKey: "currentMaxTemperature")
+        }
+    }
+    func colorChange() {
+        switch oneDayWeatherNetwork.oneDayWeatherDatas?.weather.first?.description {
+        case "clear":
+            backgroundColor = .mint
+        case "Thunderstorm":
+            backgroundColor = .mint
+        case "Drizzle":
+            backgroundColor = .mint
+        case "Rain":
+            backgroundColor = .mint
+        case "Snow":
+            backgroundColor = .mint
+        case "Clouds":
+            backgroundColor = .mint
+        default:
+            backgroundColor = .mint
         }
     }
     
