@@ -26,27 +26,29 @@ class LocationManager: NSObject, ObservableObject {
     override init() {
         super.init()
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
+//        self.locationManager.requestWhenInUseAuthorization()
+//        self.locationManager.startUpdatingLocation()
     }
     
     func requestLocation() {
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
     }
     
     func updateOneDayWeatherData() {
         guard let oneDayViewModel = oneDayWeatherViewModel, let location = location else { return }
         oneDayViewModel.oneDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: oneDayViewModel.fetchCurrentWeatherData)
+//        oneDayViewModel.changeGradientBackgroundColor()
     }
+    
     func updateFiveDayWeatherData() {
         guard let fiveDayViewModel = fiveDayWeatherViewModel, let location = location else { return }
         fiveDayViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: fiveDayViewModel.fetchCurrentWeatherData)
     }
+    
     func updateWeekWeatherData() {
         guard let weekWeatherViewModel = weekWeatherViewModel, let location = location else { return }
         weekWeatherViewModel.fiveDayWeatherNetwork.fetchWeatherData(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completion: weekWeatherViewModel.fetchWeekWeatherData)
-        
     }
 }
 
