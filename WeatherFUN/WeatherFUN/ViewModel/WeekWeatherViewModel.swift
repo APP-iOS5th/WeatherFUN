@@ -91,9 +91,6 @@ class WeekWeatherViewModel: ObservableObject {
             
             weekDatas.append(WeekWeatherModel(time: weekData[0].time.components(separatedBy: ["-", " "])[2], weather: mostCommonWeather, minTemperature: minTemp, maxTemperature: maxTemp))
         }
-        
-        print(weekDatas)
-        
     }
     
 }

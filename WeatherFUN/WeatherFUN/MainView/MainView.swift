@@ -6,11 +6,20 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct MainView: View {
-    @StateObject var weatherViewModel = OneDayWeatherViewModel()
-
+    
+    @EnvironmentObject var vm: OneDayWeatherViewModel
+    @State var color1 =  LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    
     var body: some View {
+        //            GeometryReader { _ in
+        //                SpriteView(scene: RainFall(), options: [.allowsTransparency])
+        //            }
+        //            .ignoresSafeArea()
+        //            .zIndex(0)
+        
         VStack{
             TodayView()
             MainHorizontalScrollView()
@@ -18,14 +27,37 @@ struct MainView: View {
             MainVerticalScrollView()
                 .padding(.horizontal, 10)
         }
-        .onAppear{
-            weatherViewModel.colorChange()
+        .background(color1
+            .animation(.easeInOut)
+        )
+        .onAppear {
+            color1 = vm.gradientBackgroundColor
         }
-        .background(weatherViewModel.backgroundColor)
+        .onReceive( vm.$gradientBackgroundColor ) { color in
+            color1 = color
+            print("color: \(color)")
+        }
 
     }
 }
 
 #Preview {
     MainView()
+}
+
+
+class RainFall: SKScene {
+    override func sceneDidLoad() {
+        
+        size = UIScreen.main.bounds.size
+        scaleMode = .resizeFill
+        
+        anchorPoint = CGPoint(x: 0.5, y: 1)
+        
+        backgroundColor = .clear
+        //creating node and adding to scene
+        let node = SKEmitterNode(fileNamed: "Rainfall.sks")!
+        addChild(node)
+        node.particlePositionRange.dx = UIScreen.main.bounds.width
+    }
 }
