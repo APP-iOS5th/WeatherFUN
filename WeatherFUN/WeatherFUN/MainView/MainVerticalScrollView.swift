@@ -41,15 +41,7 @@ struct MainVerticalScrollView: View {
                         .bold()
                         .opacity(0.5)
                     
-                    ZStack {
-                        Rectangle().frame(width: 150, height: 5)
-                            .cornerRadius(7)
-                            .opacity(0.25)
-                        
-                        Rectangle().frame(width: 70, height: 5)
-                            .cornerRadius(7)
-                            .foregroundStyle(.green)
-                    }
+                    TemperatureBarView(minTemperature: day.minTemperature, maxTemperature: day.maxTemperature)
                     
                     Text("\(day.maxTemperature)˚")
                         .bold()
