@@ -22,6 +22,21 @@ class WeekWeatherViewModel: ObservableObject {
         LocationManager.shared.requestLocation()
     }
     
+    func getDayOfWeek(from date: Date) -> String? { // 요일 받아오기
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.weekday], from: date)
+        
+        if let weekday = components.weekday {
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "ko_KR")
+            
+            dateFormatter.dateFormat = "EEEE"
+            return dateFormatter.string(from: date)
+        } else {
+            return nil
+        }
+    }
+    
     func fetchWeekWeatherData() {
         for i in fiveDayWeatherNetwork.weatherDatas[0].list {
             guard let time = i.dt_txt else {return}
@@ -89,10 +104,26 @@ class WeekWeatherViewModel: ObservableObject {
                 }
             }
             
-            weekDatas.append(WeekWeatherModel(time: weekData[0].time.components(separatedBy: ["-", " "])[2], weather: mostCommonWeather, minTemperature: minTemp, maxTemperature: maxTemp))
+            let dateString = String(weekData[0].time.split(separator: " ")[0])
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            if let date = dateFormatter.date(from: dateString) {
+                if let dayOfWeek = getDayOfWeek(from: date) {
+                    if i == 0 {
+                        weekDatas.append(WeekWeatherModel(time: "오늘", weather: mostCommonWeather, minTemperature: minTemp, maxTemperature: maxTemp))
+                    } else {
+                        weekDatas.append(WeekWeatherModel(time: String(dayOfWeek.prefix(1)), weather: mostCommonWeather, minTemperature: minTemp, maxTemperature: maxTemp))
+                    }
+                    // print(dayOfWeek) // 출력 : _ 요일
+                } else {
+                    print("요일을 가져올 수 없습니다")
+                }
+            } else {
+                print("유효하지 않은 날짜 형식입니다")
+            }
         }
         
-        print(weekDatas)
+       // print(weekDatas)
         
     }
     

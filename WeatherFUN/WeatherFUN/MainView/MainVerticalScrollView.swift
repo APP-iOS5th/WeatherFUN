@@ -30,8 +30,9 @@ struct MainVerticalScrollView: View {
                     .padding(.horizontal, 10)
                 
                 HStack {
-                    Text("\(day.time)일")
+                    Text("\(day.time)")
                         .bold()
+                        .padding(.leading, 3.0)
                     Spacer()
                     
                     Image(systemName: day.weatherIcon)
